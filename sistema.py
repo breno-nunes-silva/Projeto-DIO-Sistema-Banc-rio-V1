@@ -36,7 +36,7 @@ while True:
         else:
            print('Limite de saques diário atingido.')
 
-    if processo == 'd': #Processo de depósito
+    elif processo == 'd': #Processo de depósito
         valor = float(input('Insira o valor do depósito|  '))
         while valor < 0:
             valor = float(input('\nInsira um valor de depósito positivo.\nInsira o valor do depósito|  '))
@@ -44,7 +44,7 @@ while True:
         depósitos.append(valor)
         print(f'Depósito realizado com sucesso!\nR${valor:.2f} foram depositados na sua conta.')
 
-    if processo == 'e': #Processo de extrato
+    elif processo == 'e': #Processo de extrato
         print('[----------------------------------]\n\nDepósitos realizados:')
         for dps in depósitos:
            print(f'R${dps:.2f} depositados.') #
@@ -55,5 +55,8 @@ while True:
             print(f'R${sq:.2f} sacados.')
         print(f'\nSaldo final: R${saldo:.2f}')
 
-    if processo == 'q':
+    elif processo == 'q':
         break
+
+    else:
+        print('Operação inválida! Insira um processo existente.')
